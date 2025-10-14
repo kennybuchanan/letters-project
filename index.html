@@ -31,6 +31,50 @@
             return el;
             }
 
+            // Generate a random integer between min and max, inclusive
+            function randomize(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            // Generte a random element from an array
+            function randomElement(array) {
+                return array[randomize(0, array.length - 1)];
+            }
+
+            function write(array){
+                char = randomElement(array);
+                addDomElement("span", {text: char});
+            }
+
+            // Arrays for vowels and consonants
+            const a = ['er', 'et', 'uet', 'eigh'];
+            const b = ['gh', 'be', 'pb','bh'];
+            const c = ['k', 'cc', 'ch', 'cch', 'cq', 'cqu', 'cque', 'cu', 
+                        'c', 'ke', 'kh', 'kk', 'lk', 'q', 'qh','qu', 'que', 'g', 'x'];
+            const d = ['ddh', 'bd', 'ld', 'ed'];
+            const e = ['is', 'ix', 'a', 'oi'];
+            const f = ['gh', 'ff', 'fe', 'ph', 'ffe', 'ft', 'lf', 'ph', 'phe', 'pph'];
+            const g = ['gg', 'gue', 'gu', 'ckg', 'gh', 'gge'];
+            const h = ['wh', 'ch', 'j'];
+            const i = ['oy', 'ais', 'uy'];
+            const j = ['g', 'd', 'dg', 'dge', 'di', 'dj', 'dzh', 'ge', 'gg', 'gi', 'jj', 't', 'zh'];
+            const k = c;
+            const l = ['ll', 'le', 'lh', 'lle', 'gh', 'sle'];
+            const m = ['chm', 'gm', 'lm', 'mbe'];
+            const n = ['kn', 'gn', 'pn', 'mn', 'ng', 'mp', 'dn', 'nh'];
+            const o = ['aoh', 'au', 'eaue', 'ew', 'ough'];
+            const p = ['gh', 'ph', 'pe', 'pppe'];
+            const q = ['kw', 'cqu'];
+            const r = ['wr', 'rh'];
+            const s = ['c', 'cc', 'ce', 'ps', 'sc', 'ti', 'tz', 'z', 'st'];
+            const t = ['bt', 'cht', 'ght', 'th', 'phth', 'ed', 'st'];
+            const u = ['ew', 'ewe', 'ieu', 'you', 'ut', 'ueue', 'ou'];
+            const v = ['f', 'vv', 'lve', 'ph', 've', 'w', 'zv', 'bh'];
+            const w = ['u', 'h', 'ou', 'ju', 'wh'];
+            const x = ['cc', 'cques', 'cz', 'ques', 'xc', 'xs','xsc', 'xsw', 'cks', 'cs', 'ks'];
+            const y = ['i', 'j', 'll', 'z', 'r'];
+            const z = ['zz', 'cz', 'se', 's', 'sh', 'sp', 'ss', 'ts', 'tz', 'sth', 'x'];
+
             function playSound(url) {
             const audio = new Audio(url);
             audio.play();
@@ -42,29 +86,86 @@
                 
                 if (event.key === "Backspace") {
                     if (outputEl.lastChild){
-                        outputEl.removeChild(outputEl.lastChild);
-                    }
-                } else if (event.key === "d" || event.key === "D"){
-                    addDomElement("span", {text: "BARK!"});
+                        outputEl.removeChild(outputEl.lastChild);}
+
+                } else if (event.key === "a" || event.key === "A"){
+                    write(a);
+                
+                } else if (event.key === "b" || event.key === "B") {
+                    write(b);
                 
                 } else if (event.key === "c" || event.key === "C") {
+                    write(c);
                 
-                    addDomElement("img", { 
-                        src: "https://media2.giphy.com/media/v1.Y2lkPTZjMDliOTUyeTcyNHM4b3Mya3pmczY5MDBldW4zcDE2dGFsYjFvdjBka2RuNGRvdiZlcD12MV9naWZzX3NlYXJjaCZjdT1n/3vcHdyb75qRIA/200w.gif" 
-                    });
-                
-                } else if (event.key === "v" || event.key === "V") {
-                    addDomElement("video", {
-                    src: "https://i.imgur.com/Pj87n9Q.mp4",
-                    width: "300",
-                    height: "300",
-                    autoplay: "true",
-                    muted: "",
-                    controls: ""
-                });
+                } else if (event.key === "d" || event.key === "D") {
+                    write(d);
+
+                } else if (event.key === "e" || event.key === "E") {
+                    write(e);
+
+                } else if (event.key === "f" || event.key === "F") { 
+                    write(f);
+
+                } else if (event.key === "g" || event.key === "G") {
+                    write(g);
+
+                } else if (event.key === "h" || event.key === "H") {
+                    write(h);
+
+                } else if (event.key === "i" || event.key === "I") {
+                    write(i);  
+
+                } else if (event.key === "j" || event.key === "J") {
+                    write(j);
+
+                } else if (event.key === "k" || event.key === "K") {
+                    write(k);
+
+                } else if (event.key === "l" || event.key === "L") {
+                    write(l);
+
+                } else if (event.key === "m" || event.key === "M") {
+                    write(m);
+
+                } else if (event.key === "n" || event.key === "N") {
+                    write(n);
+
+                } else if (event.key === "o" || event.key === "O") {
+                    write(o);
+
+                } else if (event.key === "p" || event.key === "P") {
+                    write(p);
+
+                } else if (event.key === "q" || event.key === "Q") {
+                    write(q);
+                    
+                } else if (event.key === "r" || event.key === "R") {
+                    write(r);
+
                 } else if (event.key === "s" || event.key === "S") {
-                    playSound("https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg");
-                    addDomElement("span", { text: "(sound played)" });
+                    write(s);
+
+                } else if (event.key === "t" || event.key === "T") {
+                    write(t);
+
+                } else if (event.key === "u" || event.key === "U") {
+                    write(u);
+
+                } else if (event.key === "v" || event.key === "V") {
+                    write(v);
+
+                } else if (event.key === "w" || event.key === "W") {
+                    write(w);
+
+                } else if (event.key === "x" || event.key === "X") {
+                    write(x);
+
+                } else if (event.key === "y" || event.key === "Y") {
+                    write(y);
+
+                } else if (event.key === "z" || event.key === "Z") {
+                    write(z);
+                    
                 } else {
                     addDomElement("span", {text: event.key});
                     }
