@@ -21,6 +21,11 @@
             // find the #output element
             const outputEl = document.getElementById("output");
             
+            // create alphabet array to add randomized silent letters
+            const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
+                    'l', 'm', 'n', 'o', 'p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 
+                    'y', 'z'
+                ]
 
             // Utility: make an element, set a few attributes, append to #output
             function addDomElement(tag, attrs) {
@@ -51,36 +56,43 @@
             function write(array){
                 char = randomElement(array);
                 addDomElement("span", {text: char});
+
+                // randomize silent letters
+                chance = randomize(1,20)
+                if (chance == 20){
+                    silent = randomize(0,25)
+                    addDomElement("span", {text : alphabet[silent]})
+                }
             }
 
             // Arrays for vowels and consonants
-            const a = ['er', 'et', 'uet', 'eigh'];
-            const b = ['gh', 'be', 'pb','bh'];
+            const a = ['er', 'et', 'uet', 'eigh', 'a', 'ar'];
+            const b = ['gh', 'be', 'pb','bh', 'b'];
             const c = ['k', 'cc', 'ch', 'cch', 'cq', 'cqu', 'cque', 'cu', 
                         'c', 'ke', 'kh', 'kk', 'lk', 'q', 'qh','qu', 'que', 'g', 'x'];
-            const d = ['ddh', 'bd', 'ld', 'ed'];
-            const e = ['is', 'ix', 'a', 'oi'];
-            const f = ['gh', 'ff', 'fe', 'ph', 'ffe', 'ft', 'lf', 'ph', 'phe', 'pph'];
-            const g = ['gg', 'gue', 'gu', 'ckg', 'gh', 'gge'];
-            const h = ['wh', 'ch', 'j', 'j', 'j'];
-            const i = ['o', 'o', 'oy', 'ais', 'uy'];
-            const j = ['g', 'g', 'd', 'd', 'dg', 'dge', 'di', 'dj', 'dzh', 'ge', 'gg', 'gi', 'jj', 't', 'zh'];
+            const d = ['ddh', 'bd', 'ld', 'ed', 'd'];
+            const e = ['is', 'ix', 'a', 'oi', 'e', 'eh'];
+            const f = ['gh', 'ff', 'fe', 'ph', 'ffe', 'ft', 'lf', 'ph', 'phe', 'pph', 'f'];
+            const g = ['gg', 'gue', 'gu', 'ckg', 'gh', 'gge', 'g'];
+            const h = ['wh', 'ch', 'j', 'j', 'h'];
+            const i = ['o', 'o', 'oy', 'ais', 'uy', 'i'];
+            const j = ['g', 'g', 'd', 'd', 'dg', 'dge', 'di', 'dj', 'dzh', 'ge', 'gg', 'gi', 'jj', 't', 'zh', 'j'];
             const k = c;
-            const l = ['ll', 'le', 'lh', 'lle', 'gh', 'sle'];
-            const m = ['chm', 'gm', 'lm', 'mbe'];
-            const n = ['kn', 'gn', 'pn', 'mn', 'ng', 'mp', 'dn', 'nh'];
-            const o = ['aoh', 'au', 'eaue', 'ew', 'ough'];
-            const p = ['gh', 'ph', 'pe', 'pppe'];
-            const q = ['kw', 'cqu'];
-            const r = ['wr', 'rh'];
-            const s = ['c', 'cc', 'ce', 'ps', 'sc', 'ti', 'tz', 'z', 'st'];
-            const t = ['bt', 'cht', 'ght', 'th', 'phth', 'ed', 'st'];
-            const u = ['ew', 'ewe', 'ieu', 'you', 'ut', 'ueue', 'ou'];
-            const v = ['f', 'vv', 'lve', 'ph', 've', 'w', 'zv', 'bh'];
-            const w = ['u', 'h', 'ou', 'ju', 'wh'];
-            const x = ['cc', 'cques', 'cz', 'ques', 'xc', 'xs','xsc', 'xsw', 'cks', 'cs', 'ks'];
-            const y = ['i', 'j', 'll', 'z', 'r'];
-            const z = ['zz', 'cz', 'se', 's', 'sh', 'sp', 'ss', 'ts', 'tz', 'sth', 'x'];
+            const l = ['ll', 'le', 'lh', 'lle', 'gh', 'sle', 'l'];
+            const m = ['chm', 'gm', 'lm', 'mbe', 'm'];
+            const n = ['kn', 'gn', 'pn', 'mn', 'ng', 'mp', 'dn', 'nh', 'n'];
+            const o = ['aoh', 'au', 'eaue', 'ew', 'ough', 'o'];
+            const p = ['gh', 'ph', 'pe', 'pppe', 'p'];
+            const q = ['kw', 'cqu', 'q'];
+            const r = ['wr', 'rh', 'r'];
+            const s = ['c', 'c',  'cc', 'ce', 'ps', 'sc', 'ti', 'tz', 'z', 'z', 'st', 's'];
+            const t = ['bt', 'cht', 'ght', 'th', 'phth', 'ed', 'st', 't'];
+            const u = ['ew', 'ewe', 'ieu', 'you', 'ut', 'ueue', 'ou', 'u'];
+            const v = ['f', 'vv', 'lve', 'ph', 've', 'w', 'zv', 'bh', 'v'];
+            const w = ['u', 'h', 'ou', 'ju', 'wh', 'w'];
+            const x = ['cc', 'cques', 'cz', 'ques', 'xc', 'xs','xsc', 'xsw', 'cks', 'cs', 'ks', 'x'];
+            const y = ['i', 'j', 'll', 'z', 'r', 'j', 'll', 'y'];
+            const z = ['zz', 'cz', 'se', 's', 'sh', 'sp', 'ss', 'ts', 'tz', 'sth', 'x', 'x', 'z', 's'];
 
             function playSound(url) {
             const audio = new Audio(url);
@@ -179,6 +191,7 @@
                 event.key === "8" || event.key === "9" || event.key === "0" ||
                 event.key === " ")
                 {
+                    // don't randomize silent letters after thes characters
                     addDomElement("span", {text: event.key});
                 }
                 else {
