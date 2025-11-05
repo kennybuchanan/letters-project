@@ -3,10 +3,17 @@
     <head>
         <meta charset="UTF-8">
         <title>Letters</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Manufacturing+Consent&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1> Lestters: Kendall </h1>
-        <p> We type from left to right.</p>
+        <h1> Thou Stupid English </h1>
+        <p> typeth and gaze upon the inconsistencies unfolden in front of thyn eye</p>
+        <span class="E">E</span>
+        <span class="title">auegnchix ueuephaohmp uet phthoygmoi</span>
+        
         <div id = "output"> </div>
         <script>
             // javascript is inside the script element
@@ -55,9 +62,9 @@
             const e = ['is', 'ix', 'a', 'oi'];
             const f = ['gh', 'ff', 'fe', 'ph', 'ffe', 'ft', 'lf', 'ph', 'phe', 'pph'];
             const g = ['gg', 'gue', 'gu', 'ckg', 'gh', 'gge'];
-            const h = ['wh', 'ch', 'j'];
-            const i = ['oy', 'ais', 'uy'];
-            const j = ['g', 'd', 'dg', 'dge', 'di', 'dj', 'dzh', 'ge', 'gg', 'gi', 'jj', 't', 'zh'];
+            const h = ['wh', 'ch', 'j', 'j', 'j'];
+            const i = ['o', 'o', 'oy', 'ais', 'uy'];
+            const j = ['g', 'g', 'd', 'd', 'dg', 'dge', 'di', 'dj', 'dzh', 'ge', 'gg', 'gi', 'jj', 't', 'zh'];
             const k = c;
             const l = ['ll', 'le', 'lh', 'lle', 'gh', 'sle'];
             const m = ['chm', 'gm', 'lm', 'mbe'];
@@ -166,8 +173,16 @@
                 } else if (event.key === "z" || event.key === "Z") {
                     write(z);
                     
-                } else {
+                } else if (event.key === "." || event.key === "1" || 
+                event.key === "2" || event.key === "3" || event.key === "4" || 
+                event.key === "5" || event.key === "6" || event.key === "7" || 
+                event.key === "8" || event.key === "9" || event.key === "0" ||
+                event.key === " ")
+                {
                     addDomElement("span", {text: event.key});
+                }
+                else {
+                    // do nothing
                     }
                 });
         
